@@ -40,6 +40,16 @@ footer{
     color: #ffffff;
 }
 
+h1{
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+
+h2{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+}
+
 a{
     text-decoration: none;
 }
@@ -91,4 +101,7 @@ img.medium{
 /* This means all direct child of .card-body */
 .card-body > *{
     margin-bottom: 0.5rem;
+}
+.price{
+    font-size: 2rem;
 }
