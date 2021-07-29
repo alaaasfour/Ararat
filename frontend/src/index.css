@@ -31,7 +31,7 @@ body{
 /* Header Layout */
 header{
   grid-area: header;
-  background-color: #203040;
+  background-color: #461f18;
 }
 
 main{
@@ -95,7 +95,7 @@ img.medium{
 }
 
 .card{
-  border: 0.1rem #c0c0c0 solid;
+  border: 0.1rem #bd5b5b solid;
   background-color: #f8f8f8;
   border-radius: 0.5rem;
   margin: 1rem;
@@ -114,4 +114,8 @@ img.medium{
 .rating span{
   color: #f0c040;
   margin: 0.1rem;
+}
+
+.rating span:last-child{
+  color: #404040;
 }
