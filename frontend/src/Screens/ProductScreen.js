@@ -1,4 +1,3 @@
-import { checkPropTypes } from 'prop-types';
 import React from 'react';
 import data from '../data';
 import Rating from '../component/Rating';
@@ -50,7 +49,7 @@ export default function ProductScreen(props) {
                                 <div>
                                     {product.countInStock> 0 ? 
                                     (<span className="success">In Stock</span>) : 
-                                    (<span className="error">Unavailable!</span>)
+                                    (<span className="danger">Unavailable!</span>)
                                     }
                                 </div>
                             </div>
