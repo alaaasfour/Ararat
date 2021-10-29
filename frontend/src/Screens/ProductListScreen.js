@@ -20,7 +20,7 @@ export default function ProductListScreen(props) {
     useEffect(() => {
         if (successCreate) {
             dispatch({ type: PRODUCT_CREATE_RESET });
-            props.history.push(`/product/${createProduct._id}/edit`);
+            props.history.push(`/product/${createdProduct._id}/edit`);
         }
         dispatch(listProducts());
     }, [createdProduct, dispatch, props.history, successCreate]);
@@ -35,11 +35,11 @@ export default function ProductListScreen(props) {
             <div className="row">
                 <h1>Products</h1>
                 <button type="button" className="primary" onClick={createHandler}>
-                    Create Product
+                    Add New Product
                 </button>
             </div>
             {loadingCreate && <LoadingBox></LoadingBox>}
-            {errorCreate && <MessageBox cariant="danger">{errorCreate}</MessageBox>}
+            {errorCreate && <MessageBox variant="danger">{errorCreate}</MessageBox>}
             {loading ? (
                 <LoadingBox></LoadingBox>
             ) : error ? (
