@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 import { signout } from './actions/userActions';
 import AdminRoute from './component/AdminRoute';
 import PrivateRoute from './component/PrivateRoute';
+import SellerRoute from './component/SellerRoute';
 import CartScreen from './Screens/CartScreen';
 import HomeScreen from './Screens/HomeScreen';
 import OrderHistoryScreen from './Screens/OrderHistoryScreen';
@@ -67,6 +68,21 @@ function App() {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
+            {userInfo && userInfo.isSeller && (
+              <div className="dropdown">
+              <Link to="#admin">
+                Seller <i className="fa fa-caret-down"></i>
+              </Link>
+              <ul className="dropdown-content">     
+                <li>
+                  <Link to="/productlist/seller">Products</Link>
+                </li>
+                <li>
+                  <Link to="/orderlist/seller">Orders</Link>
+                </li>
+              </ul>
+            </div>
+            )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <Link to="#admin">
@@ -102,10 +118,12 @@ function App() {
           <Route path="/order/:id" component={OrderScreen}></Route>
           <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
           <PrivateRoute path="/profile" component={ProfileScreen}></PrivateRoute>
-          <AdminRoute path="/productList" component={ProductListScreen}></AdminRoute>
-          <AdminRoute path="/orderlist" component={OrderListScreen}></AdminRoute>
+          <AdminRoute path="/productList" component={ProductListScreen} exact></AdminRoute>
+          <AdminRoute path="/orderlist" component={OrderListScreen} exact></AdminRoute>
           <AdminRoute path="/user/:id/edit" component={UserEditScreen}></AdminRoute>
           <AdminRoute path="/userlist" component={UserListScreen}></AdminRoute>
+          <SellerRoute path="/productlist/seller" component={ProductListScreen}></SellerRoute>
+          <SellerRoute path="/orderlist/seller" component={OrderListScreen}></SellerRoute>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
         <footer className="row center">All right reserved</footer>
