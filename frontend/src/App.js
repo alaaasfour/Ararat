@@ -16,6 +16,7 @@ import ProductListScreen from './Screens/ProductListScreen';
 import ProductScreen from './Screens/ProductScreen';
 import ProfileScreen from './Screens/ProfileScreen';
 import RegisterScreen from './Screens/RegisterScreen';
+import SellerScreen from './Screens/SellerScreen';
 import ShippingAddressScreen from './Screens/ShippingAddressScreen';
 import SigninScreen from './Screens/SigninScreen';
 import UserEditScreen from './Screens/UserEditScreen';
@@ -70,18 +71,18 @@ function App() {
             )}
             {userInfo && userInfo.isSeller && (
               <div className="dropdown">
-              <Link to="#admin">
-                Seller <i className="fa fa-caret-down"></i>
-              </Link>
-              <ul className="dropdown-content">     
-                <li>
-                  <Link to="/productlist/seller">Products</Link>
-                </li>
-                <li>
-                  <Link to="/orderlist/seller">Orders</Link>
-                </li>
-              </ul>
-            </div>
+                <Link to="#admin">
+                  Seller <i className="fa fa-caret-down"></i>
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/productlist/seller">Products</Link>
+                  </li>
+                  <li>
+                    <Link to="/orderlist/seller">Orders</Link>
+                  </li>
+                </ul>
+              </div>
             )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
@@ -107,6 +108,7 @@ function App() {
           </div>
         </header>
         <main>
+          <Route path="/seller/:id" component={SellerScreen}></Route>
           <Route path="/cart/:id?" component={CartScreen}></Route>
           <Route path="/product/:id" component={ProductScreen} exact></Route>
           <Route path="/product/:id/edit" component={ProductEditScreen} exact></Route>
