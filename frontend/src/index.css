@@ -41,7 +41,7 @@ main{
 
 footer{
   grid-area: footer;
-  background-color: #203040;
+  background-color: #461f18;
   color: #ffffff;
 }
 
@@ -281,4 +281,15 @@ img.large {
 }
 .table button {
   margin: 0 0.2rem;
+}
+/* Search Box */
+.search button {
+  border-radius: 0 0.5rem 0.5rem 0;
+  border-right: none;
+  margin-left: 0.5rem;
+}
+.search input {
+  border-radius: 0.5rem 0 0 0.5rem;
+  border-right: none;
+  margin-left: 0.5rem;
 }

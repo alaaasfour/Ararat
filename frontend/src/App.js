@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 import { signout } from './actions/userActions';
 import AdminRoute from './component/AdminRoute';
 import PrivateRoute from './component/PrivateRoute';
+import SearchBox from './component/SearchBox';
 import SellerRoute from './component/SellerRoute';
 import CartScreen from './Screens/CartScreen';
 import HomeScreen from './Screens/HomeScreen';
@@ -16,6 +17,7 @@ import ProductListScreen from './Screens/ProductListScreen';
 import ProductScreen from './Screens/ProductScreen';
 import ProfileScreen from './Screens/ProfileScreen';
 import RegisterScreen from './Screens/RegisterScreen';
+import SearchScreen from './Screens/SearchScreen';
 import SellerScreen from './Screens/SellerScreen';
 import ShippingAddressScreen from './Screens/ShippingAddressScreen';
 import SigninScreen from './Screens/SigninScreen';
@@ -39,6 +41,9 @@ function App() {
             <Link className="brand" to="/">
               Ararat
             </Link>
+          </div>
+          <div>
+            <Route render={({history}) => <SearchBox history={history}></SearchBox>}></Route>
           </div>
           <div>
             <Link to="/cart">
@@ -119,6 +124,7 @@ function App() {
           <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/order/:id" component={OrderScreen}></Route>
           <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
+          <Route path="/search/name/:name?" component={SearchScreen} exact></Route>
           <PrivateRoute path="/profile" component={ProfileScreen}></PrivateRoute>
           <AdminRoute path="/productList" component={ProductListScreen} exact></AdminRoute>
           <AdminRoute path="/orderlist" component={OrderListScreen} exact></AdminRoute>

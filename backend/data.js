@@ -3,21 +3,17 @@ const data = {
   users: [
     {
       name: 'Alaa',
-      email: 'alaaAsadmindb@example.com',
+      email: 'alaa@gmail.com',
       password: bcrypt.hashSync('1234', 8),
       isAdmin: true,
-    },
-    {
-      name: 'Alaa Asfour',
-      email: 'alaaAsadminNew@example.com',
-      password: bcrypt.hashSync('1234', 8),
-      isAdmin: true,
-    },
-    {
-      name: 'Ali',
-      email: 'aliSh@example.com',
-      password: bcrypt.hashSync('1234', 8),
-      isAdmin: true,
+      isSeller: true,
+      seller: {
+        name: 'Alaa Asfour S',
+        logo: '/images/logo.png',
+        description: 'Best Seller',
+        rating: 4,
+        numReviews: 10,
+      },
     },
   ],
     products: [
